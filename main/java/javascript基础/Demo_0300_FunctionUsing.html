@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数调用的3方式</title>
+    <script>
+        function write(statement1, statement2, statement3) {
+            document.write(statement1 + statement2 + statement3);
+        }
+    </script>
+</head>
+<body>
+<hr>
+调用方式一，通过“
+<script></script>
+”调用
+<br>
+<br>
+<script>
+    write("在", "script标签里", "调用");
+</script>
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr>
+调用方式二，在事件响应中调用（最常用）
+<br>
+<br>
+<input type="button" value="方式二" onclick="write('在','事件响应中','调用')">
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr>
+调用方式三，在链接中调用
+<br>
+<br>
+<a href="javascript:write('在','链接中','调用')">方式三</a>
+</body>
+</html>

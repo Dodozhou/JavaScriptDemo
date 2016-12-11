@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form对象</title>
+    <script>
+        function fun1() {
+            var username = document.getElementById("username");
+            var password = document.getElementById("password");
+            alert(username.value);
+            alert(password.value);
+            if (username.value == null || username.value == "") {
+                document.getElementById("user_name").innerHTML = "用户名不能为空";
+            }
+            if (username.value.length > 6) {
+                document.getElementById("user_name").innerHTML = "用户名不能大于6位";
+            }
+            if (password.value.length < 6) {
+                document.getElementById("pass_word").innerHTML = "密码长度必须大于6位";
+            }
+            if (password.value == null) {
+                document.getElementById("pass_word").innerHTML = "密码长度必须大于6位";
+            }
+        }
+    </script>
+</head>
+<body>
+JavaScript引擎会自动为每一个表单建立一个表单对象。
+<br><br>
+form表单常用属性：<br>
+1、elements：表示表单中的所有组件，每个组件通过数组索引来引用。<br>
+2、length：表示表单中组件的个数。<br>
+3、name：相当于form中的name属性 <br><br>
+<hr>
+使用语法：d
+document.forms[索引值].属性<br>
+document.forms[索引值].方法（参数）<br>
+document.表单名称.属性<br>
+document.表单名称.方法（参数）<br>
+<br>
+<br>
+<br>
+<br>
+<form name="form1">
+    <label>username:
+        <input type="text" id="username"/>
+    </label>
+    <span style="color: red" id="user_name"></span>
+    <br>
+    <label>password:
+        <input type="password" id="password"/>
+    </label>
+    <span style="color: red" id="pass_word"></span>
+    <br>
+    <input type="button" value="提交" onclick="fun1()">
+</form>
+
+
+</body>
+</html>

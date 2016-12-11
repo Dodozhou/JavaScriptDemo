@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--使用javascript标记链接脚本文件-->
+    <!--该文件在resources目录下，在html中调用时不用加../resources/**.js -->
+    <script src="../../resources/Demo_0100.js"></script>
+    <title>JavaScript Import</title>
+    <!-- 2、使用script标记插入脚本-->
+    <script type="text/javascript">
+        alert('2、使用script标记插入脚本');
+    </script>
+</head>
+<body>
+<form>
+    1、在HTML标记的事件属性中直接添加脚本示例
+    <input type="button" value="事件属性中直接添加脚本示例" onclick="alert('1、事件属性中直接添加脚本！');">
+    <input type="button" value="引用外部js文件" onclick="ClickFunction()">
+</form>
+</body>
+</html>

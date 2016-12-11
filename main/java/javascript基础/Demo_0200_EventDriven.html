@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EventDriven</title>
+    <script>
+        /*特别注意，函数名一定不要用click()、onclick()之类疑似保留字的名字，否则会毫无征兆地出错！*/
+        function fun() {
+            document.getElementById("play").innerHTML = "onload is on!";
+        }
+        function fun1() {
+            document.getElementById("play").innerHTML = "onclick is on!";
+        }
+        function fun2() {
+            document.getElementById("play").innerHTML = "ondblclick is on!";
+        }
+        function fun3() {
+            document.getElementById("play").innerHTML = "onmouseover is on!";
+            document.getElementById("play").style.color = "blue";
+        }
+        function fun4() {
+            document.getElementById("error").innerHTML = "onerror:failed to load the img!";
+        }
+        function fun5() {
+            document.getElementById("blur1").innerHTML = "onblur :失去焦点";
+        }
+        function fun6() {
+            document.getElementById("blur2").innerHTML = "onchange :失去焦点，且值已经改变";
+        }
+        function fun7() {
+            document.getElementById("blur3").innerHTML = "onfocus :得到焦点";
+        }
+        function fun8() {
+            alert("onsubmit");
+        }
+    </script>
+</head>
+<body onload="fun()">
+<div align="center" style="color: red">
+    <span id="play"></span>
+</div>
+<br>
+<br>
+<div align="center">
+    <input type="button" value="onclick" onclick="fun1()"/>
+    <br>
+    <br>
+    <span style="cursor: pointer" ondblclick="fun2()">ondblclick</span>
+    <br>
+    <br>
+    <span style="cursor: pointer" onmouseover="fun3()">onmouseover</span>
+    <br>
+    <br>
+    <img src="a.jpg" onerror="fun4()">
+    <span id="error" style="color: #ff9010"></span>
+    <br>
+    <br>
+    <form>
+        <label>name:
+            <input type="text" name="name" onblur="fun5()"/>
+            <span id="blur1"></span>
+        </label>
+        <br>
+        <label>password:
+            <input type="password" name="password " onchange="fun6()"/>
+            <span id="blur2"></span>
+        </label>
+        <br>
+        <label>email:
+            <input type="email" name="email" onfocus="fun7()"/>
+            <span id="blur3"></span>
+        </label>
+        <br>
+        <input type="submit" onsubmit="fun8()">
+    </form>
+
+</div>
+
+</body>
+</html>

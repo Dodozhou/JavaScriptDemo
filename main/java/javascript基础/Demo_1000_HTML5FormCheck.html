@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5中便捷的表单验证</title>
+</head>
+<body>
+<form action="Demo_1000_HTML5FormCheck.html" id="form1">
+    <label>username:
+        <input type="text" name="username" autofocus required
+               pattern="\w{2,10}" title="必须输入2个以上字符">
+    </label><br>
+    <label>password:
+        <input form="form1" type="password" name="password" required
+               pattern="^[a-zA-Z]\w{5,11}" title="必须以字母开头，包含字符或数字，长度是6~12">
+    </label><br>
+    <input type="submit" value="注册">
+    <input type="reset" value="取消">
+</form>
+
+</body>
+</html>
