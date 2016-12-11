@@ -1,0 +1,61 @@
+一、jQuery的引入
+  1、通过百度的CDN<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+  2、下载jQuery.js文件，然后<script src="../js/jQuery.js"></script>引入
+  注意事项：jQuery文件如果放在../../resources/文件夹下，则加载不出来，可能是因为resource文件夹
+  禁止外部访问。
+二、jQuery的简单例子
+    /*文档就绪事件处理器*/
+    $(document).ready(function(){
+        /*事件处理函数：所有的事件函数都在文档自身的“文档就绪事件处理器”内部进行定义*/
+        $("button").click(function(){
+            /*内部调用css方法修改css属性*/
+            $("p").css("background-color","yellow");
+        });
+    });
+三、jQuery基本语法
+    1、jQuery名称冲突问题：jQuery使用$符号作为jQuery的简介方式。但是某些JavaScript库中的函数
+    （比如Prototype）同样使用$符号。jQuery使用名为noConflict()的方法来解决该问题。
+    var jq=jQuery.noConflict()，帮助我们使用自己的名称（比如jq）来代替$符号。
+    2、jQuery使用原则：
+        a.把所有的jQuery代码置于事件处理函数中
+        b.把所有事件处理函数放置于文档就绪事件处理器中
+        c.把jQuery代码置于单独的.js文件中
+        d.如果存在名称冲突，则重命名jQuery库
+    3、jQuery常用事件
+        a.$(selector).ready(function)
+            文档的就绪事件，当HTML文档就绪可用
+        b.$(selector).click(function)
+            被选中元素点击事件
+        c.$(selector).dblclick(function)
+            被选中元素双击事件
+        d.$(selector).focus(function)
+            被选中元素聚焦事件
+        e.$(selector).mouseover(funtion)
+            被选元素的鼠标悬停事件
+        f.$(selector).blur(function)
+            被选中元素失去焦点时触发的事件（form验证很有用）
+        g.$(selector).change(function)
+            被选中元素失去改变时触发事件（form验证很有用）
+        h.$(selector).submit(function)
+            提交表单时触发事件，改事件只适用于表单元素（form验证很有用）
+        ......
+    4、jQuery效果
+        a.$(selector).hide()
+              隐藏被选中的元素
+        b.$(selector).show()
+              显示被选中的元素
+        c.$(selector).toggle()
+              切换（在隐藏和显示之间）被选元素
+        d.$(selector).slideDown()
+              向下滑动（显示）被选中元素
+        e.$(selector).slideUp()
+              向上滑动（隐藏）被选中元素
+        f.$(selector).slideToggle()
+              交替向上和向下滑动
+        g.$(selector).fadeIn()/fadeOut()
+              淡入淡出被选中元素
+        h.$(selector).fadeTo()
+              把被选元素淡出为给定的不透明度
+        i.$(selector).animate()
+              对元素执行自定义动画
+        ......
